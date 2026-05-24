@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydro Buddy - Water Reminder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <main class="app-shell">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Hydro Buddy</p>
+          <h1>Drink water, feel sparkly.</h1>
+          <p class="hero-text">
+            Set your daily goal, log each glass, and let Hydro Buddy cheerfully
+            remind you when it is time to sip.
+          </p>
+        </div>
+
+        <div class="mascot-card" aria-label="Smiling water drop mascot">
+          <div class="drop">
+            <span class="eye left-eye"></span>
+            <span class="eye right-eye"></span>
+            <span class="smile"></span>
+          </div>
+          <span class="sparkle sparkle-one">+</span>
+          <span class="sparkle sparkle-two">*</span>
+        </div>
+      </section>
+
+      <section class="dashboard-grid" aria-label="Water tracking dashboard">
+        <article class="progress-card">
+          <div class="card-heading">
+            <div>
+              <p class="section-label">Today's progress</p>
+              <h2><span id="currentAmount">0</span> ml</h2>
+            </div>
+            <span class="goal-pill">Goal: <strong id="goalAmount">2000</strong> ml</span>
+          </div>
+
+          <div class="water-meter" aria-hidden="true">
+            <div class="water-fill" id="waterFill"></div>
+            <div class="meter-shine"></div>
+            <span class="meter-percent" id="meterPercent">0%</span>
+          </div>
+
+          <div class="progress-copy">
+            <p id="progressMessage">Add your first splash to start the day.</p>
+            <p id="remainingMessage">2000 ml left to reach your goal.</p>
+          </div>
+
+          <div class="quick-actions" aria-label="Log water shortcuts">
+            <button class="secondary-action" data-add="250">+250 ml</button>
+            <button class="secondary-action" data-add="500">+500 ml</button>
+            <button class="secondary-action" data-add="750">+750 ml</button>
+          </div>
+
+          <button class="primary-action" id="addCupButton">
+            Add my cup (<span id="cupSizeLabel">250</span> ml)
+          </button>
+        </article>
+
+        <aside class="settings-card">
+          <p class="section-label">Customize your goal</p>
+          <form id="settingsForm" class="settings-form">
+            <label for="goalInput">
+              Daily water goal
+              <div class="input-group">
+                <input id="goalInput" name="goal" type="number" min="250" step="50" required />
+                <span>ml</span>
+              </div>
+            </label>
+
+            <label for="cupInput">
+              Cup size
+              <div class="input-group">
+                <input id="cupInput" name="cup" type="number" min="50" step="25" required />
+                <span>ml</span>
+              </div>
+            </label>
+
+            <label for="reminderInput">
+              Remind me every
+              <div class="input-group">
+                <input
+                  id="reminderInput"
+                  name="reminder"
+                  type="number"
+                  min="5"
+                  max="240"
+                  step="5"
+                  required
+                />
+                <span>min</span>
+              </div>
+            </label>
+
+            <button class="primary-action" type="submit">Save my splash plan</button>
+          </form>
+
+          <div class="reminder-panel">
+            <div>
+              <p class="section-label">Reminders</p>
+              <p id="reminderStatus">Reminders are paused.</p>
+            </div>
+            <button class="toggle-action" id="reminderToggle" type="button">
+              Start reminders
+            </button>
+          </div>
+        </aside>
+
+        <article class="streak-card">
+          <p class="section-label">Hydration streak</p>
+          <div class="streak-number"><span id="streakCount">0</span> days</div>
+          <p id="streakMessage">Reach your goal today to start a shiny streak.</p>
+        </article>
+
+        <article class="history-card">
+          <div class="card-heading compact">
+            <div>
+              <p class="section-label">Sip log</p>
+              <h2>Today</h2>
+            </div>
+            <button class="text-action" id="resetButton" type="button">Reset day</button>
+          </div>
+          <ul class="sip-list" id="sipList"></ul>
+        </article>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
