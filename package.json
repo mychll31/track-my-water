@@ -1,0 +1,10 @@
+{
+  "name": "track-my-water",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A colorful water tracking app with customizable hydration goals and drink reminders.",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "check": "node --check app.js"
+  }
+}
