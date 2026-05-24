@@ -1,27 +1,53 @@
 # Track My Water
 
-A colorful, playful water tracking app that helps you set a daily hydration goal,
-log drinks, and start browser reminders so you remember to drink water.
+A beautiful, minimal water intake tracker built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- Customize your daily water goal, cup size, and reminder interval
-- Log quick water amounts or your saved cup size
-- See a fun animated progress meter and encouragement messages
-- Track today’s sip history and hydration streak
-- Persist your settings and progress in the browser with local storage
-- Optional browser notifications for drink reminders
+- Track daily water intake with preset or custom amounts
+- Visual progress indicator with animated water glass
+- Daily goal setting (default: 2000 ml)
+- Weekly overview chart showing hydration history
+- Entry log with timestamps and removal
+- Data persisted in browser localStorage
+- Responsive design optimized for mobile and desktop
 
-## Run locally
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ (22 recommended)
+- pnpm
+
+### Install dependencies
 
 ```bash
-npm start
+pnpm install
 ```
 
-Then open `http://localhost:4173`.
-
-## Validate
+### Run the development server
 
 ```bash
-npm run check
+pnpm dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Lint
+
+```bash
+pnpm lint
+```
+
+### Build for production
+
+```bash
+pnpm build
+```
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 16 — React framework with App Router
+- [TypeScript](https://www.typescriptlang.org/) — Type safety
+- [Tailwind CSS](https://tailwindcss.com/) v4 — Utility-first styling
+- [React](https://react.dev/) 19 — UI library
